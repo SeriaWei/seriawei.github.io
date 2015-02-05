@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Categories>
+  <Category name="家常菜谱" rename="daily-food">
+    <Item name="家常菜" rename="jiangchangcaipu" url="http://www.meishij.net/chufang/diy/jiangchangcaipu/"></Item>
+    <Item name="凉菜" rename="langcaipu" url="http://www.meishij.net/chufang/diy/langcaipu/"></Item>
+    <Item name="素食" rename="sushi" url="http://www.meishij.net/chufang/diy/sushi/"></Item>
+    <Item name="晚餐" rename="wancan" url="http://www.meishij.net/chufang/diy/wancan/"></Item>
+    <Item name="私家菜" rename="sijiacai" url="http://www.meishij.net/chufang/diy/sijiacai/"></Item>
+    <Item name="热菜" rename="recaipu" url="http://www.meishij.net/chufang/diy/recaipu/"></Item>
+    <Item name="海鲜" rename="haixian" url="http://www.meishij.net/chufang/diy/haixian/"></Item>
+    <Item name="孕妇" rename="yunfu" url="http://www.meishij.net/chufang/diy/yunfu/"></Item>
+    <Item name="早餐" rename="zaocan" url="http://www.meishij.net/chufang/diy/zaocan/"></Item>
+    <Item name="午餐" rename="wucan" url="http://www.meishij.net/chufang/diy/wucan/"></Item>
+    <Item name="甜品点心" rename="tianpindianxin" url="http://www.meishij.net/chufang/diy/tianpindianxin/"></Item>
+    <Item name="汤粥" rename="tangbaocaipu" url="http://www.meishij.net/chufang/diy/tangbaocaipu/"></Item>
+    <Item name="宝宝食谱-婴儿食谱" rename="baobaocaipu" url="http://www.meishij.net/chufang/diy/baobaocaipu/"></Item>
+    <Item name="糕点主食" rename="gaodianxiaochi" url="http://www.meishij.net/chufang/diy/gaodianxiaochi/"></Item>
+    <Item name="微波炉" rename="weibolucaipu" url="http://www.meishij.net/chufang/diy/weibolucaipu/"></Item>
+  </Category>
+  <Category name="中华菜系" rename="china-food">
+    <Item name="川菜" rename="chuancai" url="http://www.meishij.net/china-food/caixi/chuancai/"></Item>
+    <Item name="粤菜" rename="yuecai" url="http://www.meishij.net/china-food/caixi/yuecai/"></Item>
+    <Item name="东北菜" rename="dongbeicai" url="http://www.meishij.net/china-food/caixi/dongbeicai/"></Item>
+    <Item name="湘菜" rename="xiangcai" url="http://www.meishij.net/china-food/caixi/xiangcai/"></Item>
+    <Item name="鲁菜" rename="lucai" url="http://www.meishij.net/china-food/caixi/lucai/"></Item>
+    <Item name="浙菜" rename="zhecai" url="http://www.meishij.net/china-food/caixi/zhecai/"></Item>
+    <Item name="湖北菜" rename="hubeicai" url="http://www.meishij.net/china-food/caixi/hubeicai/"></Item>
+    <Item name="清真菜" rename="qingzhencai" url="http://www.meishij.net/china-food/caixi/qingzhencai/"></Item>
+  </Category>
+  <Category name="外国菜谱" rename="foreign-food">
+    <Item name="韩国料理" rename="hanguo" url="http://www.meishij.net/chufang/diy/guowaicaipu1/hanguo/"></Item>
+    <Item name="日本料理" rename="japan" url="http://www.meishij.net/chufang/diy/guowaicaipu1/japan/"></Item>
+    <Item name="法国菜" rename="faguo" url="http://www.meishij.net/chufang/diy/guowaicaipu1/faguo/"></Item>
+    <Item name="意大利餐" rename="yidali" url="http://www.meishij.net/chufang/diy/guowaicaipu1/yidali/"></Item>
+  </Category>
+  <Category name="各地小吃" rename="snacks">
+    <Item name="四川小吃" rename="sichuan" url="http://www.meishij.net/china-food/xiaochi/sichuan/"></Item>
+    <Item name="广东小吃" rename="guangdong" url="http://www.meishij.net/china-food/xiaochi/guangdong/"></Item>
+    <Item name="北京小吃" rename="beijing" url="http://www.meishij.net/china-food/xiaochi/beijing/"></Item>
+    <Item name="陕西小吃" rename="shanxii" url="http://www.meishij.net/china-food/xiaochi/shanxii/"></Item>
+  </Category>
+  <Category name="烘焙" rename="cure">
+    <Item name="蛋糕面包" rename="dangaomianbao" url="http://www.meishij.net/hongpei/dangaomianbao/"></Item>
+    <Item name="饼干配方" rename="bingganpeifang" url="http://www.meishij.net/hongpei/bingganpeifang/"></Item>
+    <Item name="甜品点心" rename="tianpindianxin" url="http://www.meishij.net/hongpei/tianpindianxin/"></Item>
+  </Category>
+</Categories>
