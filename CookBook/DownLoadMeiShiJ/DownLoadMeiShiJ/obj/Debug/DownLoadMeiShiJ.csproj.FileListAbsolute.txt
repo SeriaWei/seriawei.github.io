@@ -7,3 +7,5 @@ E:\GitHub\seriawei.github.io\CookBook\DownLoadMeiShiJ\DownLoadMeiShiJ\bin\Debug\
 E:\GitHub\seriawei.github.io\CookBook\DownLoadMeiShiJ\DownLoadMeiShiJ\obj\Debug\DownLoadMeiShiJ.csprojResolveAssemblyReference.cache
 E:\GitHub\seriawei.github.io\CookBook\DownLoadMeiShiJ\DownLoadMeiShiJ\obj\Debug\DownLoadMeiShiJ.exe
 E:\GitHub\seriawei.github.io\CookBook\DownLoadMeiShiJ\DownLoadMeiShiJ\obj\Debug\DownLoadMeiShiJ.pdb
+E:\GitHub\seriawei.github.io\CookBook\DownLoadMeiShiJ\DownLoadMeiShiJ\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\seriawei.github.io\CookBook\DownLoadMeiShiJ\DownLoadMeiShiJ\bin\Debug\Newtonsoft.Json.xml
