@@ -43,7 +43,7 @@ namespace DownLoadMeiShiJ
                             cItem.CategoryReName = itemrename;
                             pageItems.Add(cItem);
                         }
-                        string result = Newtonsoft.Json.JsonConvert.SerializeObject(pageItems);
+                        string result = Newtonsoft.Json.JsonConvert.SerializeObject(pageItems);                        
                         string dir = favePath + rename + "\\";
                         if (!System.IO.Directory.Exists(dir))
                         {
@@ -53,7 +53,7 @@ namespace DownLoadMeiShiJ
                         Console.WriteLine(file);
                         System.IO.FileStream fs = new System.IO.FileStream(file, System.IO.FileMode.Create);
                         System.IO.StreamWriter writer = new System.IO.StreamWriter(fs);
-                        writer.Write(result);
+                        writer.Write(Encoding.UTF8.GetString(Encoding.Default.GetBytes(result)));
                         writer.Close();
                         writer.Dispose();
                         fs.Close();
