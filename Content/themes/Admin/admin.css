@@ -32,7 +32,9 @@ img {
 }
 
 
-
+.input-group .form-control{
+    position:static;
+}
 a.badge:hover {
     background-color: #1F1F1F;
 }
@@ -196,7 +198,7 @@ a.badge:hover {
     padding: 1px 0;
     list-style: none;
     color: #717171;
-    min-height: 40px;
+    min-height: 85px;
 }
 
     .fullRowList li {
@@ -365,7 +367,10 @@ a.badge:hover {
     margin: 0;
     padding: 0;
 }
-
+.thumbnail.active{
+    background:#337ab7;
+    color:#fff;
+}
 #media-list .thumbnail > a.img-link {
     display: block;
     height: 130px;

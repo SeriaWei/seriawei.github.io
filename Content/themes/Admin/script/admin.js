@@ -44,6 +44,7 @@
         var obj = $(this);
         window.top.Easy.ShowUrlWindow({
             url: obj.parent().siblings("input.form-control").data("url"),
+            width: obj.parent().siblings("input.form-control").data("width") || 800,
             onLoad: function (box) {
                 var win = this;
                 $(this.document).find("#confirm").click(function () {
@@ -73,6 +74,21 @@
                 });
             }
         });
+    }).on("click", ".custom-style-editor", function () {
+        window.top.Easy.ShowUrlWindow({
+            url: '/Modules/Common/Scripts/StyleEditor/index.html',
+            width: 1024,
+            title: "编辑样式",
+            onLoad: function (box) {
+                var win = this;
+                $(this.document).find("#confirm").click(function () {
+                    obj.val(win.GetSelected());
+                    box.close();
+                });
+            }
+        });
+    }).on("submit","form",function() {
+        Easy.Block();
     });
     $(".form-group select#ZoneID").on("mousedown", false);
 
@@ -183,17 +199,18 @@
     });
 
     tinymce.init({
-        content_css: ["../../../Content/bootstrap/css/bootstrap.css", "../../../Content/bootstrap/css/bootstrap-theme.css"],
+        content_css: ["//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css", "//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"],
         selector: "textarea.html",
         verify_html: false,
         plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",
-            "insertdatetime media table contextmenu paste"
+            "insertdatetime media table contextmenu paste",
+            "filebrowser textcolor"
         ],
-        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar: "insertfile undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | filebrowser",
         height: 300,
         relative_urls: false,
-        language: "zh_CN"
+        language_url: "http://cdn.zkeasoft.com/Scripts/tinymce/langs/zh_CN.js"
     });
 });
