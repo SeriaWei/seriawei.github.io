@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Style.Reqiured("admin").AtHead();
+    Script.Reqiured("validate").AtFoot();
+}
+@using (Style.AtHead())
+{
+    <style>
+        .panel-default {
+            margin: 120px auto auto auto;
+            width: 500px;
+        }
+        .input-group {
+            margin: 10px 30px;
+        }
+    </style>
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="glyphicon glyphicon-user"></i>
+            登录
+        </div>
+        <div class="panel-body">
+            <div class="input-group">
+                <span class="input-group-addon">用户名</span>
+                <input type="text" id="userName" name="userName" class="form-control" data-val="true" data-val-required="请输入用户名" />
+            </div>
+            <div class="input-group">
+                <span class="field-validation-valid " data-valmsg-for="userName" data-valmsg-replace="true"></span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span style="padding: 0 7px;">密码</span>
+                </span>
+                <input type="password" id="password" name="password" class="form-control" data-val="true" data-val-required="请输入密码" />
+            </div>
+            <div class="input-group">
+                <span class="field-validation-valid" data-valmsg-for="password" data-valmsg-replace="true"></span>
+            </div>
+
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-right">
+                <input type="submit" class="btn btn-primary" value="登录" />
+            </div>
+
+        </div>
+    </div>
+}
+@using (Script.AtFoot())
+{
+    <script type="text/javascript" async src="http://www.zkea.net/openstatistics"></script>
+}
