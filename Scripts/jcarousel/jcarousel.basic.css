@@ -67,7 +67,11 @@
        -moz-box-shadow: 0 0 2px #999;
             box-shadow: 0 0 2px #999;
 }
-
+.jcarousel-control-prev:hover,
+.jcarousel-control-next:hover{
+    color: #fff;
+    text-decoration: none;
+}
 .jcarousel-control-prev {
     left: 10px;
 }
