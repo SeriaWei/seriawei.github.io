@@ -1,8 +1,8 @@
 (function($) {
     $(function() {
-        $(".jcarousel-wrapper").each(function() {
-            $("img",$(this)).width($(this).width());
-        });
+        // $(".jcarousel-wrapper").each(function() {
+        //     $("img",$(this)).width($(this).width());
+        // });
         $('.jcarousel').jcarousel();
 
         $('.jcarousel-control-prev')
