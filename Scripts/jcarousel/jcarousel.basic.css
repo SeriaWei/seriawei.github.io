@@ -1,7 +1,5 @@
 .jcarousel-wrapper {
-    margin: 20px auto;
-    position: relative;
-    border: 10px solid #fff;    
+    position: relative;  
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
             border-radius: 5px;
@@ -23,8 +21,11 @@
 
 .jcarousel-wrapper .photo-credits a {
     color: #fff;
+    text-decoration: none;
 }
-
+.jcarousel-wrapper .photo-credits a:hover {
+    color: #fff;
+}
 /** Carousel **/
 
 .jcarousel {
@@ -49,9 +50,10 @@
 .jcarousel-control-prev,
 .jcarousel-control-next {
     position: absolute;
-    top: 200px;
+    top: 50%;
     width: 30px;
     height: 30px;
+    margin-top: -15px;
     text-align: center;
     background: #4E443C;
     color: #fff;
