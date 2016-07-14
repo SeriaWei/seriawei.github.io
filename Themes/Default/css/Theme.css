@@ -7749,6 +7749,9 @@ p {
 .widget {
   margin: 15px;
 }
+.widget.full {
+  margin: 0;
+}
 .widget.container {
   margin-left: auto;
   margin-right: auto;
