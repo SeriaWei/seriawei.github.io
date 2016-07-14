@@ -1,5 +1,5 @@
 (function($) {
-    $(function() {
+
         $('.jcarousel').jcarousel();
 
         $('.jcarousel-control-prev')
@@ -32,5 +32,5 @@
                 $(this).removeClass('active');
             })
             .jcarouselPagination();
-    });
+   
 })(jQuery);
