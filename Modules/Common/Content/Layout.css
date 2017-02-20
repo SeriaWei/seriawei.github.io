@@ -1,4 +1,10 @@
-﻿zone {
+﻿/*!
+ * http://www.zkea.net/
+ * Copyright 2016 ZKEASOFT
+ * http://www.zkea.net/licenses
+ */
+
+zone {
     display: block;
 }
 
@@ -320,7 +326,9 @@ label.additional {
 .design-border .zoneName {
     display: block;
 }
-
+.design-border .zoneName a.label {
+    margin-right: 10px;
+}
 .dropInfo {
     background-color: #92daef !important;
 }
@@ -421,9 +429,12 @@ label.additional {
     text-decoration:none;
 }
 
-    .zoneToolbar a:hover {
+    .zoneToolbar a:hover,
+    .zoneToolbar a:active,
+    .zoneToolbar a:focus {
         color: red;
-    text-decoration:none;
+        text-decoration: none;
+        outline: none;
     }
 
 .zoneToolbar .glyphicon {

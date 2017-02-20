@@ -1,6 +1,6 @@
 ﻿@using Easy.CMS.Common
-@using Easy.Web.CMS.Page
 @using Easy.ViewPort.jsTree
+@using Easy.Web.CMS.Page
 @{
     string pageId = Request.QueryString["PageID"];
     Script.Reqiured("jQueryUi").AtFoot();
@@ -34,7 +34,7 @@
                 <div class="panel-heading">
                     页面
                 </div>
-                <div class="panel-body">
+                <div id="tree-body" class="panel-body" style="overflow:auto;">
                     @pageTree
                 </div>
                 @if (Authorizer.Authorize(PermissionKeys.ManagePage))
@@ -62,28 +62,33 @@
             <div class="modal-body">
                 <ul>
                     <li>
-                        “添加页面”：添加顶级页面，即域名下的一级子页面。~/xxxxx
+                        添加页面：添加顶级页面，即域名下的一级子页面。~/xxxxx
                     </li>
                     <li>
-                        “添加”：添加子页面
-                    </li>
-                    <li>
-                        “编辑”：编辑选中页面的属性，像标题，SEO关键字等
-                    </li>
-                    <li>
-                        “预览”：查看最新修改版本
-                    </li>
-                    <li>
-                        “查看”：查看已发布版本
-                    </li>
-                    <li>
-                        “发布”：将页面发布到前端可查看
-                    </li>
-                    <li>
-                        “设计”：进入页面的设计模式
-                    </li>
-                    <li>
-                        “布局”：修改页面布局。<code>会影响所有使用该布局的页面</code>
+                        <span>右键菜单</span>
+                        <ul>
+                            <li>
+                                添加：添加子页面
+                            </li>
+                            <li>
+                                编辑：编辑选中页面的属性，像标题，SEO关键字等
+                            </li>
+                            <li>
+                                预览：查看最新修改版本
+                            </li>
+                            <li>
+                                查看：查看已发布版本
+                            </li>
+                            <li>
+                                发布：将页面发布到前端可查看
+                            </li>
+                            <li>
+                                设计：进入页面的设计模式
+                            </li>
+                            <li>
+                                布局：修改页面布局。<code>会影响所有使用该布局的页面</code>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <hr />
@@ -133,8 +138,10 @@
         }
         function ActiveNode(node, selected) {
             location.hash = selected.node.id;
+            var pageZones = $("#pageZones");
+            pageZones.empty();
             $.post("@Url.Action("PageZones", "Page", new { module = "admin" })", { PageID: selected.node.id }, function (html) {
-                $("#pageZones").html(html);
+                pageZones.html(html);
             }, "html");
         }
         function checkCallBack(operation, node, node_parent, node_position, more) {
@@ -161,9 +168,19 @@
                     }
                 }, "json");
             }, true, 10);
+        }).on("click", ".publish-page",function() {
+            var btn = $(this);
+            Publish({
+                reference: {
+                    attr: function (id) {
+                return btn.data(id);
+            }}});
         });
         if (!location.hash) {
             location.hash = '@(pageId)';
         }
+        $(function () {
+            $("#tree-body").css("max-height",$(window).height() - 240);
+        });
     </script>
 }
