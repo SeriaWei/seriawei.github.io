@@ -41,7 +41,9 @@ img {
 .input-group .form-control {
     position: static;
 }
-
+.form-control.required {
+    background-color: #fff0dd;
+}
 a.badge:hover {
     background-color: #1F1F1F;
 }
@@ -367,7 +369,8 @@ a.badge:hover {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff5f5f5', GradientType=0);
 }
 
-.form-group select#ZoneID {
+.form-group select#ZoneID,
+.form-group select.select {
     cursor: pointer;
 }
 
