@@ -30,11 +30,11 @@ img {
 }
 
 a {
-    color: @color-main;
+    color: @color-link;
 }
 
 a:hover {
-    color: @color-main-actived;
+    color: @color-link-hover;
 }
 
 a.btn, .dropdown-menu a {
@@ -65,7 +65,7 @@ p {
 .bs-callout {
     padding: @padding-base;
     margin: 0;
-    border: @border-thin solid @color-border;
+    border: @border-thin solid @color-main;
     border-top-width: @border-heavy;
     border-radius: 5px;
 }
@@ -129,7 +129,8 @@ p {
 .list-group-item.active:hover,
 .list-group-item.active:focus {
     text-shadow: 0 -1px 0 @color-main-actived;
-    .background-image(@color-main-actived,@color-main-actived);
+    border-color:@color-main;
+    .background-image(@color-main,@color-main);
 }
 
 .list-group {
@@ -168,18 +169,17 @@ p {
 }
 
 .btn-default {
-    .background-image(@color-main-light,@color-main-actived);
+    .background-image(@color-main-light,@color-main);
     border-color: @color-main-actived;
-    text-shadow: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
     color: #fff;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    background-color: @color-main-actived;
-    background-position: 0 -15px;
-    text-shadow: none;
-    color: #EEF2F5;
+    .background-image(@color-main,@color-main-actived);
+    background-position: 0;
+    color: #fff;
 }
 
 .btn-default:active:hover,
@@ -193,11 +193,16 @@ p {
 .open > .dropdown-toggle.btn-default.focus,
 .btn-default:active,
 .btn-default.active {
-    background-color: @color-main-actived;
+    .background-image(@color-main,@color-main-actived);
     border-color: @color-main-actived;
-    text-shadow: none;
-    color: #EEF2F5;
+    color: #fff;
 }
-.panel-default>.panel-heading {
-    .background-image(#fafcff,#fafcff);
+
+
+.panel-default {
+    border-color: @panel-border-color;
+}
+.panel-default > .panel-heading {
+    .background-image(@panel-color,@panel-color-deep);
+    border-color: @panel-border-color;
 }
