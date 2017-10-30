@@ -3,7 +3,7 @@ Description=ZKEACMS
 
 [Service]
 WorkingDirectory=/zkeasoft/cms
-ExecStart=/usr/bin/dotnet /zkeasoft/cmsZKEACMS.WebHost.dll
+ExecStart=/usr/bin/dotnet /zkeasoft/cms/ZKEACMS.WebHost.dll
 Restart=always
 RestartSec=10
 SyslogIdentifier=zkeacms
