@@ -6,14 +6,14 @@ sudo apt-get install dotnet-sdk-2.0.2 -y &&
 sudo apt-get install zip unzip -y &&
 sudo apt-get install nginx -y &&
 sudo wget -O cms.zip http://cdn.zkeasoft.com/core/cms.zip &&
-sudo mkdir /zkeasoft &&
-sudo mkdir /zkeasoft/cms &&
+sudo mkdir /zkeasoft -p &&
+sudo mkdir /zkeasoft/cms -p &&
 sudo unzip cms.zip -d /zkeasoft/cms &&
 sudo wget http://cdn.zkeasoft.com/core/nginx-zkeacms.conf &&
 sudo wget http://cdn.zkeasoft.com/core/zkeacms.service &&
-sudo mv nginx-zkeacms.conf /etc/nginx/sites-enabled/zkeacms.conf -f &&
+sudo mv nginx-zkeacms.conf /etc/nginx/conf.d/zkeacms.conf -f &&
 sudo mv zkeacms.service /etc/systemd/system/zkeacms.service -f &&
-sudo vi /etc/nginx/sites-enabled/zkeacms.conf &&
+sudo mv /etc/nginx/sites-available/default backup-nginx-default -f &&
 sudo systemctl start nginx &&
 sudo systemctl start zkeacms &&
 sudo systemctl enable nginx &&

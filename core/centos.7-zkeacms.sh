@@ -12,9 +12,9 @@ sudo mkdir /zkeasoft/cms &&
 sudo unzip cms.zip -d /zkeasoft/cms &&
 sudo wget http://cdn.zkeasoft.com/core/nginx-zkeacms.conf &&
 sudo wget http://cdn.zkeasoft.com/core/zkeacms.service &&
-sudo mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.bak &&
 sudo mv nginx-zkeacms.conf /etc/nginx/conf.d/zkeacms.conf -f &&
 sudo mv zkeacms.service /etc/systemd/system/zkeacms.service -f &&
+sudo mv /etc/nginx/conf.d/default.conf backup-nginx-default.conf &&
 sudo systemctl start nginx &&
 sudo systemctl start zkeacms &&
 sudo systemctl enable nginx &&
