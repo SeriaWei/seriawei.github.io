@@ -2,7 +2,7 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg &&
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list' &&
 sudo apt-get update -y &&
-sudo apt-get install dotnet-sdk-2.0.2 -y &&
+sudo apt-get install dotnet-sdk-2.0.3 -y &&
 sudo apt-get install zip unzip -y &&
 sudo apt-get install nginx -y &&
 sudo wget -O cms.zip http://cdn.zkeasoft.com/core/cms.zip &&
