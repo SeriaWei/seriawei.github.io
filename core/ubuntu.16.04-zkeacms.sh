@@ -1,4 +1,5 @@
 curl http://cdn.zkeasoft.com/core/linux.aspnetcore.sh|sh &&
+apt-get update -y &&
 apt-get install libunwind-dev -y &&
 apt-get install zip unzip -y &&
 wget -O cms.zip http://cdn.zkeasoft.com/core/cms.zip &&
