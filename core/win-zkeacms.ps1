@@ -3,6 +3,7 @@ Import-Module WebAdministration
 $WebPath=[environment]::CurrentDirectory + "\ZKEACMS";
 Write-Host "Welcome to use ZKEACMS, visit our website(http://www.zkea.net) for more information"
 Write-Host "ZKEACMS will install to $WebPath"
+Write-Host "After installation, you can visit the site with http://localhost:8080"
 Write-Host "Installation started. Press Ctrl+C to stop."
 
 Write-Host "Checking IIS status..."
@@ -65,3 +66,4 @@ New-Website -name ZKEACMS -PhysicalPath $WebPath -ApplicationPool ZKEACMS -Port 
 Invoke-Expression "net stop was /y"
 Invoke-Expression "net start w3svc"
 Invoke-Expression "cmd.exe /C start http://localhost:8080"
+Write-Host "ZKEACMS is installed successfully."
