@@ -5,7 +5,7 @@ Write-Host "ZKEACMS will install to $WebPath"
 
 if(!(Get-Command dotnet -ErrorAction SilentlyContinue))
 {
-	Write-Host "Download DotNetCore.WindowsHosting."
+	Write-Host "Downloading DotNetCore.WindowsHosting."
 	#Invoke-WebRequest -Uri "https://download.microsoft.com/download/6/A/A/6AA4EDFF-645B-48C5-81CC-ED5963AEAD48/vc_redist.x64.exe" -OutFile "vc_redist.x64.exe"
 	Invoke-WebRequest -Uri "https://aka.ms/dotnetcore.2.0.0-windowshosting" -OutFile "DotNetCore.WindowsHosting.exe"
 	#Start-Process "vc_redist.x64.exe" -Wait 
@@ -18,7 +18,7 @@ if(Test-Path -Path "ZKEACMS.zip")
 {
 	Remove-Item -Path "ZKEACMS.zip" -Force
 }
-Write-Host "Download ZKEACMS application package."
+Write-Host "Downloading ZKEACMS application package."
 Invoke-WebRequest -Uri "http://cdn.zkeasoft.com/core/cms.zip" -OutFile "ZKEACMS.zip"
 if(Test-Path "ZKEACMS")
 {
