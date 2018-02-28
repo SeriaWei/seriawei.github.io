@@ -1,7 +1,8 @@
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 Import-Module WebAdministration
-Write-Host "ZKEACMS will install to $PSScriptRoot\ZKEACMS"
-$WebPah="$PSScriptRoot\ZKEACMS";
+$WebPath=[environment]::CurrentDirectory + "\ZKEACMS";
+Write-Host "ZKEACMS will install to $WebPath"
+
 if(!(Get-Command dotnet -ErrorAction SilentlyContinue))
 {
 	Write-Host "Download DotNetCore.WindowsHosting."
@@ -35,7 +36,7 @@ if(Test-Path IIS:\Sites\ZKEACMS)
 {
 	Remove-Website ZKEACMS
 }
-New-Website -name ZKEACMS -PhysicalPath $WebPah -ApplicationPool ZKEACMS -Port 8080
+New-Website -name ZKEACMS -PhysicalPath $WebPath -ApplicationPool ZKEACMS -Port 8080
 Invoke-Expression "net stop was /y"
 Invoke-Expression "net start w3svc"
 Invoke-Expression "cmd.exe /C start http://localhost:8080"
