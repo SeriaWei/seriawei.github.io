@@ -33,7 +33,7 @@ if(Test-Path IIS:\Sites\ZKEACMS)
 {
 	Remove-Website ZKEACMS
 }
-New-Website -name ZKEACMS -PhysicalPath $PSScriptRoot\ZKEACMS -ApplicationPool ZKEACMS -Port 8080
+New-Website -name ZKEACMS -PhysicalPath ZKEACMS -ApplicationPool ZKEACMS -Port 8080
 Invoke-Expression "net stop was /y"
 Invoke-Expression "net start w3svc"
 Invoke-Expression "cmd.exe /C start http://localhost:8080"
