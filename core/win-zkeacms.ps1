@@ -47,10 +47,6 @@ if(Test-Path "ZKEACMS")
 	Remove-Item -Path "ZKEACMS" -Force -Recurse
 }
 [System.IO.Compression.ZipFile]::ExtractToDirectory("ZKEACMS.zip" ,"ZKEACMS")
-if(Test-Path -Path "ZKEACMS.zip")
-{
-	Remove-Item -Path "ZKEACMS.zip" -Force
-}
 
 Write-Host "Setting up IIS."
 if(!(Test-Path IIS:\AppPools\ZKEACMS))
