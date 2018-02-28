@@ -39,4 +39,8 @@ if(Test-Path IIS:\Sites\ZKEACMS)
 New-Website -name ZKEACMS -PhysicalPath $WebPath -ApplicationPool ZKEACMS -Port 8080
 Invoke-Expression "net stop was /y"
 Invoke-Expression "net start w3svc"
+if(Test-Path -Path "ZKEACMS.zip")
+{
+	Remove-Item -Path "ZKEACMS.zip" -Force
+}
 Invoke-Expression "cmd.exe /C start http://localhost:8080"
