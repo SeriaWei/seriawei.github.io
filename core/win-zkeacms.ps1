@@ -6,7 +6,7 @@ Write-Host "ZKEACMS will install to $WebPath"
 Write-Host "Installation started. Press Ctrl+C to stop."
 
 Write-Host "Checking IIS status..."
-$iis = Get-Service IISADMIN -ErrorAction Ignore
+$iis = Get-Service W3SVC -ErrorAction Ignore
 if($iis){
     if($iis.Status -eq "Running") {
         Write-Host "IIS Service is running"
@@ -16,8 +16,7 @@ if($iis){
     }
 }
 else {
-	Write-Host "IIS Service not installed"
-	exit 0;
+	Write-Host "Checking IIS failed, please make sure IIS is ready."	
 }
 
 Write-Host "Downloading DotNetCore.WindowsHosting."
