@@ -4,6 +4,7 @@ $WebPath=[environment]::CurrentDirectory + "\ZKEACMS";
 Write-Host "Welcome to use ZKEACMS, visit our website(http://www.zkea.net) for more information"
 Write-Host "ZKEACMS will install to $WebPath"
 Write-Host "Installation started. Press Ctrl+C to stop."
+
 Write-Host "Checking IIS status..."
 $iis = Get-Service IISADMIN -ErrorAction Ignore
 if($iis){
@@ -46,6 +47,10 @@ if(Test-Path "ZKEACMS")
 	Remove-Item -Path "ZKEACMS" -Force -Recurse
 }
 [System.IO.Compression.ZipFile]::ExtractToDirectory("ZKEACMS.zip" ,"ZKEACMS")
+if(Test-Path -Path "ZKEACMS.zip")
+{
+	Remove-Item -Path "ZKEACMS.zip" -Force
+}
 
 Write-Host "Setting up IIS."
 if(!(Test-Path IIS:\AppPools\ZKEACMS))
@@ -60,8 +65,4 @@ if(Test-Path IIS:\Sites\ZKEACMS)
 New-Website -name ZKEACMS -PhysicalPath $WebPath -ApplicationPool ZKEACMS -Port 8080
 Invoke-Expression "net stop was /y"
 Invoke-Expression "net start w3svc"
-if(Test-Path -Path "ZKEACMS.zip")
-{
-	Remove-Item -Path "ZKEACMS.zip" -Force
-}
 Invoke-Expression "cmd.exe /C start http://localhost:8080"
