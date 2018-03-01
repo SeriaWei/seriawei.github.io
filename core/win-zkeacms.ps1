@@ -22,6 +22,7 @@ else {
 $aspNetCoreModule = Get-WebGlobalModule -Name AspNetCoreModule -ErrorAction Ignore
 if($aspNetCoreModule)
 {
+	Write-Host "IIS ASPNetCoreModule is ready:"
 	Write-Host $aspNetCoreModule.Name $aspNetCoreModule.Image 
 }
 else
