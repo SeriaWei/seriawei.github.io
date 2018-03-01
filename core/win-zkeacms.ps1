@@ -69,4 +69,8 @@ New-Website -name ZKEACMS -PhysicalPath $WebPath -ApplicationPool ZKEACMS -Port 
 Invoke-Expression "net stop was /y"
 Invoke-Expression "net start w3svc"
 Invoke-Expression "cmd.exe /C start http://localhost:8080"
-Write-Host "ZKEACMS is installed successfully."
+if(Test-Path -Path "ZKEACMS.zip")
+{
+	Remove-Item -Path "ZKEACMS.zip" -Force
+}
+Write-Host "ZKEACMS installed successfully."
