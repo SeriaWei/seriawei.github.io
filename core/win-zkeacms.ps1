@@ -19,19 +19,26 @@ if($iis){
 else {
 	Write-Host "Checking IIS failed, please make sure IIS is ready."	
 }
-
-Write-Host "Downloading DotNetCore.WindowsHosting."
-if(Test-Path -Path "DotNetCore.WindowsHosting.exe")
+$aspNetCoreModule = Get-WebGlobalModule -Name AspNetCoreModule -ErrorAction Ignore
+if($aspNetCoreModule)
 {
-	Remove-Item -Path "DotNetCore.WindowsHosting.exe" -Force
+	Write-Host $aspNetCoreModule.Name $aspNetCoreModule.Image 
 }
-Invoke-WebRequest -Uri "https://aka.ms/dotnetcore.2.0.0-windowshosting" -OutFile "DotNetCore.WindowsHosting.exe"
-
-Write-Host "Installing DotNetCore.WindowsHosting."
-Start-Process "DotNetCore.WindowsHosting.exe" -Wait
-if(Test-Path -Path "DotNetCore.WindowsHosting.exe")
+else
 {
-	Remove-Item -Path "DotNetCore.WindowsHosting.exe" -Force
+	Write-Host "Downloading DotNetCore.WindowsHosting."
+	if(Test-Path -Path "DotNetCore.WindowsHosting.exe")
+	{
+		Remove-Item -Path "DotNetCore.WindowsHosting.exe" -Force
+	}
+	Invoke-WebRequest -Uri "https://aka.ms/dotnetcore.2.0.0-windowshosting" -OutFile "DotNetCore.WindowsHosting.exe"
+	
+	Write-Host "Installing DotNetCore.WindowsHosting."
+	Start-Process "DotNetCore.WindowsHosting.exe" -Wait
+	if(Test-Path -Path "DotNetCore.WindowsHosting.exe")
+	{
+		Remove-Item -Path "DotNetCore.WindowsHosting.exe" -Force
+	}
 }
 
 Write-Host "Downloading ZKEACMS application package."
