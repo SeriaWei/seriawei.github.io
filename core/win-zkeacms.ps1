@@ -47,7 +47,7 @@ if(Test-Path -Path "ZKEACMS.zip")
 {
 	Remove-Item -Path "ZKEACMS.zip" -Force
 }
-Invoke-WebRequest -Uri "http://cdn.zkeasoft.com/core/cms.zip" -OutFile "ZKEACMS.zip"
+Invoke-WebRequest -Uri "http://zkeasoft-10041459.file.myqcloud.com/core/cms.zip" -OutFile "ZKEACMS.zip"
 
 Write-Host "Unzip ZKEACMS application package."
 if(Test-Path "ZKEACMS")
