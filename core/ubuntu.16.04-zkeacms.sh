@@ -2,6 +2,7 @@ sudo curl http://cdn.zkeasoft.com/core/linux.aspnetcore.sh|sh &&
 sudo apt-get update -y &&
 sudo apt-get install libunwind-dev -y &&
 sudo apt-get install zip unzip -y &&
+sudo rm -rf cms.zip &&
 sudo wget -O cms.zip http://zkeasoft-10041459.file.myqcloud.com/core/cms.zip &&
 sudo mkdir -p /zkeasoft/cms
 sudo unzip cms.zip -d /zkeasoft/cms &&
