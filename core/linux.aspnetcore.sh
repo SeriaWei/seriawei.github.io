@@ -1,3 +1,4 @@
+echo Downloading dotnet-hosting &&
 sudo rm -rf dotnet-hosting.tar.gz &&
 sudo rm -rf /zkeasoft/dotnet &&
 sudo mkdir -p /zkeasoft/dotnet &&
