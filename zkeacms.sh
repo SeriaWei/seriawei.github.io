@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 function isCentos(){
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
         return false
