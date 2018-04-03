@@ -1,14 +1,14 @@
 #!/bin/bash
 function isCentos(){
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
-        return false
+        return 0
     else
-        return true
+        return 1
     fi
 }
 function checkUpdate(){
     isCentos
-    if [$? = true ];then
+    if [$? = 1 ];then
         sudo yum check-update -y
     else
         sudo apt update -y
@@ -16,7 +16,7 @@ function checkUpdate(){
 }
 function install(){
     isCentos
-    if [ $? = true ];then
+    if [ $? = 1 ];then
         sudo yum install $1 -y
     else
         sudo apt install $1 -y
@@ -24,7 +24,7 @@ function install(){
 }
 function installDotnetCore(){
     isCentos
-    if [ $? = true ];then
+    if [ $? = 1 ];then
         install libunwind
         install libicu
     else
