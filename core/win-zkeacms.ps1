@@ -32,7 +32,7 @@ else
 	{
 		Remove-Item -Path "DotNetCore.WindowsHosting.exe" -Force
 	}
-	Invoke-WebRequest -Uri "https://download.microsoft.com/download/1/1/0/11046135-4207-40D3-A795-13ECEA741B32/DotNetCore.2.0.5-WindowsHosting.exe" -OutFile "DotNetCore.WindowsHosting.exe"
+	Invoke-WebRequest -Uri "https://download.microsoft.com/download/9/1/7/917308D9-6C92-4DA5-B4B1-B4A19451E2D2/dotnet-hosting-2.1.0-win.exe" -OutFile "DotNetCore.WindowsHosting.exe"
 	
 	Write-Host "Installing DotNetCore.WindowsHosting."
 	Start-Process "DotNetCore.WindowsHosting.exe" -Wait

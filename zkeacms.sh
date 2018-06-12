@@ -33,7 +33,7 @@ function installDotnetCore(){
 
     sudo rm -rf /zkeasoft/dotnet 
     sudo mkdir -p /zkeasoft/dotnet
-    sudo wget -O dotnet-hosting.tar.gz https://download.microsoft.com/download/1/1/0/11046135-4207-40D3-A795-13ECEA741B32/dotnet-hosting-2.0.5-linux-x64.tar.gz
+    sudo wget -O dotnet-hosting.tar.gz https://download.microsoft.com/download/9/1/7/917308D9-6C92-4DA5-B4B1-B4A19451E2D2/aspnetcore-runtime-2.1.0-linux-x64.tar.gz
     sudo tar zxf dotnet-hosting.tar.gz -C /zkeasoft/dotnet
     sudo rm -rf dotnet-hosting.tar.gz
 }
