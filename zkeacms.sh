@@ -25,10 +25,7 @@ function install(){
 function installDotnetCore(){
     isCentos
     if [ $? = 1 ];then
-        install libunwind
-        install libicu
-    else
-        install libunwind-dev
+        install icu    
     fi
 
     sudo rm -rf /zkeasoft/dotnet 
