@@ -19,7 +19,7 @@ if($iis){
 else {
 	Write-Host "Checking IIS failed, please make sure IIS is ready."	
 }
-$aspNetCoreModule = Get-WebGlobalModule -Name AspNetCoreModule -ErrorAction Ignore
+$aspNetCoreModule = Get-WebGlobalModule -Name AspNetCoreModuleV2 -ErrorAction Ignore
 if($aspNetCoreModule)
 {
 	Write-Host "IIS ASPNetCoreModule is ready:"
