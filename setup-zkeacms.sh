@@ -1,7 +1,8 @@
 #!/bin/bash
 
 function isCentos(){
-    if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
+    if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]
+    then
         return 0
     else
         return 1
@@ -10,7 +11,8 @@ function isCentos(){
 
 function install(){
     isCentos
-    if [ $? = 1 ];then
+    if [ $? = 1 ]
+    then
         sudo yum install $1 -y
     else
         sudo apt install $1 -y
@@ -18,7 +20,8 @@ function install(){
 }
 function installDotnetCore(){
     isCentos
-    if [ $? = 1 ];then
+    if [ $? = 1 ]
+    then
         install icu
     fi
     
@@ -50,7 +53,8 @@ function installcms(){
 
 function configNginx(){
     isCentos
-    if [ $? = 1 ];then
+    if [ $? = 1 ]
+    then
         sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
     fi
     install nginx
@@ -72,7 +76,11 @@ function configNginx(){
     
     sudo systemctl restart nginx
 }
+read -p 'Do you want to install nginx?(yes/no) ' installNginx
+if [ $installNginx = 'yes' ]
+then
+    configNginx
+fi
 
-configNginx
 installDotnetCore
 installcms
