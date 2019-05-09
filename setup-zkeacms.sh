@@ -59,7 +59,8 @@ function configNginx(){
     fi
     install nginx
     nginxConfigFile="/etc/nginx/conf.d/default.conf"
-    if [[ -d /etc/nginx/sites-available ]]; then
+    if [[ -d /etc/nginx/sites-available ]]
+    then
         nginxConfigFile="/etc/nginx/sites-available/default"
     fi
     sudo echo "server {" > $nginxConfigFile
