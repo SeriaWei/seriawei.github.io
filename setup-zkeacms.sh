@@ -78,7 +78,8 @@ function configNginx(){
     sudo systemctl restart nginx
 }
 read -p 'Do you want to install nginx?(yes/no) ' installNginx
-if [ $installNginx = 'yes' ]
+
+if [ installNginx = 'yes' ]
 then
     configNginx
 fi
