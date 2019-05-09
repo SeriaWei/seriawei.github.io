@@ -1,4 +1,5 @@
 #!/bin/bash
+
 function isCentos(){
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
         return 0
@@ -18,9 +19,9 @@ function install(){
 function installDotnetCore(){
     isCentos
     if [ $? = 1 ];then
-        install icu    
+        install icu
     fi
-    install wget
+    
     sudo rm -rf /dotnet 
     sudo mkdir -p /dotnet
     sudo wget -O dotnet.tar.gz http://www.zkea.net/dotnet-runtime-linux
