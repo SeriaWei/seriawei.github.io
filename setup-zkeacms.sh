@@ -77,7 +77,7 @@ configNginx() {
 installcms
 
 read -p 'Do you want to install nginx?(yes/no) ' installNginx
-if [[ $installNginx = 'yes' ]]; then
+if [ '$installNginx' = 'yes' ]; then
     configNginx
 fi
 
