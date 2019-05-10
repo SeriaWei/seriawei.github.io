@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# This script is meant for quick & easy install zkeacms:
+#   $ sh -c "$(curl http://cdn.zkeasoft.com/setup-zkeacms.sh)"
+#   OR
+#   $ curl http://cdn.zkeasoft.com/setup-zkeacms.sh -o setup-zkeacms.sh
+#   $ sh setup-zkeacms.sh
+
 isCentos() {
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
         return 0
@@ -30,7 +36,7 @@ installDotnetCore() {
     sudo rm -rf dotnet.tar.gz
 }
 installcms() {
-    read -p 'Please enter the cms path: ' cmspath
+    read -p 'Please enter the cms full path: ' cmspath
 	sudo echo "[Unit]" > /etc/systemd/system/zkeacms.service
 	sudo echo "Description=ZKEACMS" >> /etc/systemd/system/zkeacms.service
 	sudo echo "[Service]" >> /etc/systemd/system/zkeacms.service
