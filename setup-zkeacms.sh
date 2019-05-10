@@ -80,6 +80,7 @@ configNginx() {
     sudo echo "}" >> $nginxConfigFile
     
     sudo systemctl restart nginx
+    sudo systemctl enable nginx
 }
 
 installcms
