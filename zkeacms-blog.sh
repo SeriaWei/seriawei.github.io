@@ -38,7 +38,7 @@ installDotnetCore() {
 installcms() {
     cmspath="/zkeacms"
     sudo rm -rf cms.zip
-    sudo wget -O cms.zip http://zkeasoft-10041459.file.myqcloud.com/core/cms.zip
+    sudo wget -O cms.zip http://zkeasoft-10041459.file.myqcloud.com/core/blog.zip
     sudo mkdir -p $cmspath
     sudo unzip -q -o cms.zip -d $cmspath
 
