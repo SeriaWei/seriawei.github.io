@@ -1,6 +1,6 @@
 #!/bin/bash
 
-isCentos {
+isCentos() {
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
         return 0
     else
@@ -8,7 +8,7 @@ isCentos {
     fi
 }
 
-install {
+install() {
     isCentos
     if [ $? = 1 ]; then
         sudo yum install $1 -y
@@ -16,7 +16,7 @@ install {
         sudo apt install $1 -y
     fi
 }
-installDotnetCore {
+installDotnetCore() {
     isCentos
     if [ $? = 1 ]; then
         install icu
@@ -28,7 +28,7 @@ installDotnetCore {
     sudo tar zxf dotnet.tar.gz -C /dotnet
     sudo rm -rf dotnet.tar.gz
 }
-installcms {
+installcms() {
     read -p 'Please enter the cms path: ' cmspath
 	sudo echo "[Unit]" > /etc/systemd/system/zkeacms.service
 	sudo echo "Description=ZKEACMS" >> /etc/systemd/system/zkeacms.service
@@ -49,7 +49,7 @@ installcms {
     sudo systemctl enable zkeacms
 }
 
-configNginx {
+configNginx() {
     isCentos
     if [ $? = 1 ]; then
         sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
