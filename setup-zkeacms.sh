@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 isCentos() {
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
