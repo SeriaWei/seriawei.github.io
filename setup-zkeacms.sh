@@ -17,6 +17,7 @@ install() {
     fi
 }
 installDotnetCore() {
+    echo Install dotnet
     isCentos
     if [ $? = 1 ]; then
         install icu
@@ -50,6 +51,7 @@ installcms() {
 }
 
 configNginx() {
+    echo Install nginx
     isCentos
     if [ $? = 1 ]; then
         sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
@@ -77,7 +79,7 @@ configNginx() {
 installcms
 
 read -p 'Do you want to install nginx?(yes/no) ' installNginx
-if [ '$installNginx' = 'yes' ]; then
+if [ $installNginx = 'yes' ]; then
     configNginx
 fi
 
