@@ -1,27 +1,24 @@
 #!/bin/bash
 
-function isCentos {
-    if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]
-    then
+isCentos {
+    if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
         return 0
     else
         return 1
     fi
 }
 
-function install {
+install {
     isCentos
-    if [ $? = 1 ]
-    then
+    if [ $? = 1 ]; then
         sudo yum install $1 -y
     else
         sudo apt install $1 -y
     fi
 }
-function installDotnetCore {
+installDotnetCore {
     isCentos
-    if [ $? = 1 ]
-    then
+    if [ $? = 1 ]; then
         install icu
     fi
     
@@ -31,7 +28,7 @@ function installDotnetCore {
     sudo tar zxf dotnet.tar.gz -C /dotnet
     sudo rm -rf dotnet.tar.gz
 }
-function installcms {
+installcms {
     read -p 'Please enter the cms path: ' cmspath
 	sudo echo "[Unit]" > /etc/systemd/system/zkeacms.service
 	sudo echo "Description=ZKEACMS" >> /etc/systemd/system/zkeacms.service
@@ -48,14 +45,13 @@ function installcms {
 	sudo echo "WantedBy=multi-user.target" >> /etc/systemd/system/zkeacms.service
     
     sudo systemctl daemon-reload
-    
+
     sudo systemctl enable zkeacms
 }
 
-function configNginx {
+configNginx {
     isCentos
-    if [ $? = 1 ]
-    then
+    if [ $? = 1 ]; then
         sudo rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
     fi
     install nginx
@@ -81,8 +77,7 @@ function configNginx {
 installcms
 
 read -p 'Do you want to install nginx?(yes/no) ' installNginx
-if [ $installNginx = 'yes' ]
-then
+if [ $installNginx = 'yes' ]; then
     configNginx
 fi
 
