@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function isCentos(){
+function isCentos {
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]
     then
         return 0
@@ -9,7 +9,7 @@ function isCentos(){
     fi
 }
 
-function install(){
+function install {
     isCentos
     if [ $? = 1 ]
     then
@@ -18,7 +18,7 @@ function install(){
         sudo apt install $1 -y
     fi
 }
-function installDotnetCore(){
+function installDotnetCore {
     isCentos
     if [ $? = 1 ]
     then
@@ -31,7 +31,7 @@ function installDotnetCore(){
     sudo tar zxf dotnet.tar.gz -C /dotnet
     sudo rm -rf dotnet.tar.gz
 }
-function installcms(){
+function installcms {
     read -p 'Please enter the cms path: ' cmspath
 	sudo echo "[Unit]" > /etc/systemd/system/zkeacms.service
 	sudo echo "Description=ZKEACMS" >> /etc/systemd/system/zkeacms.service
@@ -47,11 +47,12 @@ function installcms(){
 	sudo echo "[Install]" >> /etc/systemd/system/zkeacms.service
 	sudo echo "WantedBy=multi-user.target" >> /etc/systemd/system/zkeacms.service
     
-    sudo systemctl restart zkeacms
+    sudo systemctl daemon-reload
+    
     sudo systemctl enable zkeacms
 }
 
-function configNginx(){
+function configNginx {
     isCentos
     if [ $? = 1 ]
     then
@@ -59,8 +60,7 @@ function configNginx(){
     fi
     install nginx
     nginxConfigFile="/etc/nginx/conf.d/default.conf"
-    if [[ -d /etc/nginx/sites-available ]]
-    then
+    if [[ -d /etc/nginx/sites-available ]]; then
         nginxConfigFile="/etc/nginx/sites-available/default"
     fi
     sudo echo "server {" > $nginxConfigFile
@@ -77,12 +77,15 @@ function configNginx(){
     
     sudo systemctl restart nginx
 }
-read -p 'Do you want to install nginx?(yes/no) ' installNginx
 
+installcms
+
+read -p 'Do you want to install nginx?(yes/no) ' installNginx
 if [ $installNginx = 'yes' ]
 then
     configNginx
 fi
 
 installDotnetCore
-installcms
+
+sudo systemctl restart zkeacms
