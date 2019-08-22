@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# This script is meant for quick & easy install zkeacms blog:
-#   $ sh -c "$(curl http://cdn.zkeasoft.com/zkeacms_blog.sh)"
+# This script is meant for quick & easy install zkeacms:
+#   $ sh -c "$(curl http://cdn.zkeasoft.com/zkeacms.sh)"
 #   OR
-#   $ curl http://cdn.zkeasoft.com/zkeacms_blog.sh -o zkeacms_blog.sh
+#   $ curl http://cdn.zkeasoft.com/zkeacms.sh -o zkeacms.sh
 #   $ sh zkeacms_blog.sh
 
 isCentos() {
