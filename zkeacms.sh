@@ -4,7 +4,7 @@
 #   $ sh -c "$(curl http://cdn.zkeasoft.com/zkeacms.sh)"
 #   OR
 #   $ curl http://cdn.zkeasoft.com/zkeacms.sh -o zkeacms.sh
-#   $ sh zkeacms_blog.sh
+#   $ sh zkeacms.sh
 
 isCentos() {
     if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
